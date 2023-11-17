@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="neuro.css">
+    <title>NEUROLOGY</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/blue-logo-insurance-family_1057-2815.jpg?size=626&ext=jpg&ga=GA1.1.1102539373.1687667984&semt=ais"
+                    alt=""></div>
+
+            
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="patient.html">PRESCRIPTION</a>
+                <a href="#">CONTACT</a>
+            </nav>
+    </header>
+    <div class="title">
+        <h1>
+           NEUROLOGY
+        </h1>
+    </div>
+    <div class="content">
+        <div class="row row1">
+            <div class="col">
+                <img src="https://kdahweb-static.kokilabenhospital.com/kdah-2019/product/1666877088.jpg" alt="">
+            </div>
+            <div class="col">
+                <div class="name"><h3>Dr. Dinesh Chouksey</h3></div>
+                <div class="body"><strong>CONSULTANT, NEUROLOGY<br>
+                    STROKE, EPILEPSY, PARKINSON’S DISEASE & MOVEMENT DISORDERS, HEADACHE, MIGRAINE, VERTIGO, SYNCOPE WITH AUTONOMIC DYSFUNCTION.
+                           </strong>MBBS, MD (Medicine), DM (Neurology)<br>
+                    
+                           DEPARTMENT: Neurosciences<br>
+                           YEARS OF PRACTICE: 8 Years <br>
+                           GENDER: Male <br>
+                           LANGUAGES SPOKEN: English, Hindi</div>
+            </div>
+            <div class="button">
+                <button id="btn" class="btn btn-info">MAKE AN APPOINTMENT</button>
+            </div>
+        </div>
+        
+    </div>
+     <br>
+    <div class="row row2">
+        <div class="col">
+            <img src="https://kdahweb-static.kokilabenhospital.com/kdah-2019/product/1680519500.jpg" alt="">
+        </div>
+        <div class="col">
+            <div class="name"><h3>Dr. Pranav Ghodgaonkar</h3></div>
+            <div class="body"><strong>CLEAD CONSULTANT, NEUROSURGERY <br>
+                VASCULAR NEUROSURGERY, MINIMALLY INVASIVE NEUROSURGERY, ENDOSCOPIC NEUROSURGERY, COMPLEX SPINAL SURGERY
+                
+                </strong>MBBS, MS (General Surgery), MCh (Neurosurgery)<br>
+                
+                DEPARTMENT: Neurosciences<br>
+                YEARS OF PRACTICE: 19 Years <br>
+                GENDER: Male <br>
+                LANGUAGES SPOKEN: English, Hindi, Marathi & Gujarati</div>
+        </div>
+        <div class="button">
+            <button id="btn" class="btn btn-info">MAKE AN APPOINTMENT</button>
+        </div>
+    </div>
+    <div class="row row3">
+        <div class="col">
+            <img  src="https://kdahweb-static.kokilabenhospital.com/kdah-2019/product/1684724051.jpg" alt="">
+        </div>
+        <div class="col">
+            <div class="name"><h3>Dr. Shruti Purohit</h3></div>
+            <div class="body"><strong>ASSOCIATE CONSULTANT <br>
+                
+                </strong>M.B.B.S,MD, DNB Neonatology<br>
+                
+                DEPARTMENT: Mother & Child<br>
+                YEARS OF PRACTICE: 10 Years <br>
+                GENDER: Female <br>
+                LANGUAGES SPOKEN: English, Hindi, Marathi</div>
+        </div>
+        <div class="button">
+            <button id="btn" class="btn btn-info">MAKE AN APPOINTMENT</button>
+        </div>
+    </div>
+    
+    </div>
+        </div>
+
+
+        <!-- registration form using popup -->
+ <div class="container form1">
+    <form id="form1" action="" class="register" name="register">
+        <div class="fname">
+            <label id="lab" for="firstName">FirstName</label>
+            <input type="text" class="form-control" id="firstName" required>
+        </div>
+        <div class="lname">
+            <label id="lab" for="lastName">LastName</label>
+            <input type="text" class="form-control" id="lastName" required>
+        </div>
+        <div class="dob">
+            <label id="lab" for="DOB">D.O.B</label>
+            <input type="date" class="form-control" id="DOB" required>
+        </div>
+        <div class="mobile">
+            <label id="lab" for="mobile">Mobile</label>
+            <input type="number" class="form-control" id="mobile" required>
+        </div>
+        <div class="pin">
+            <label id="lab" for="pin">Pin</label>
+            <input type="text" class="form-control" id="pin" required>
+        </div>
+        <div class="confirmpin">
+            <label id="lab" for="confirmpin">ConfirmPin</label>
+            <input type="text" class="form-control" id="confirmpin" required>
+        </div>
+
+        <div class="btn">
+            <button id="button1" class="btn btn-primary login" onclick="validationRegForm()">REGISTER</button>
+            <button id="button1" class="btn btn-secondary close">CLOSE</button>
+        </div>
+    </form>
+</div>
+<!-- registration end -->
+<!-- login form html -->
+<div id="form2" class="loginform">
+    <form action="" id="form2" class="login">
+        <div class="mobile">
+            <label for="">Mobile</label>
+            <input id="mobile" type="text" class="form-control">
+        </div>
+        <div class="pin">
+            <label for="" class="pin">Pin</label>
+            <input id="pin" type="text" class="form-control">
+        </div> <br>
+        <div class="submit">
+            <button id="button2" class="btn btn-primary login">LOGIN</button>
+            <button id="button2" class="btn btn-danger close">CLOSE</button>
+        </div>
+    </form>
+</div>
+    
+</div>
+
+
+
+
+
+
+
+ <!-- script for popup registration -->
+
+
+ <script>
+    let infobtn = document.querySelectorAll("#btn");
+    infobtn.forEach(button => {
+        button.addEventListener("click", (event) => {
+            // event.preventDefault();
+            //  console.log( document.getElementById("form1"));  
+            document.getElementById("form1").style.display = "block";
+
+        })
+    })
+
+    let button1 = document.querySelectorAll("#button1");
+    button1.forEach(button => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            // console.log(event.target.classList.contains("close"));
+            if (event.target.classList.contains("close")) {
+                document.getElementById("form1").style.display = "none";
+            }
+        })
+    })
+</script>
+
+<!-- popup over -->
+
+
+<!-- form validation -->
+
+
+<script>
+
+    let getbutton1 = document.querySelectorAll("#button1");
+    getbutton1.forEach(button1 => {
+        // console.log(button1);
+    })
+
+    function validationRegForm() {
+
+        const firstname = document.getElementById("firstName").value;
+        const lastname = document.getElementById("lastName").value;
+        const dob = document.getElementById("DOB").value;
+        const mobile = document.getElementById("mobile").value;
+        const pin = document.getElementById("pin").value;
+        const confirmpin = document.getElementById("confirmpin").value;
+
+
+        var pass = /^[A-Za-z0-9]+[0-9]$/;
+        var letters = /^[A-Za-z]+$/;
+        var filter = /^[0-9A-Z-a-z]+$/;
+        var d = /^[0-9]+\-/;
+        var m = /^[0-9]/;
+
+        if (firstname === "") {
+            alert("enter firstname");
+        } else if (!letters.test(firstname)) {
+            alert("enter valid detail")
+        } else if (lastname === "") {
+            alert("enter last name")
+        } else if (!letters.test(lastname)) {
+            alert("enter valid last name")
+        } else if (dob === "") {
+            alert("enter dob")
+        } else if (!d.test(dob)) {
+            alert("enter valid dob")
+        } else if (mobile === "") {
+            alert("enter mobile")
+        } else if (!m.test(mobile)) {
+            alert("mobile contains only numbers")
+        } else if (pin === "") {
+            alert("enter pin")
+        } else if (!filter.test(pin)) {
+            alert("enter valid pin")
+        } else if (confirmpin === "") {
+            alert("enter confirm pin")
+        } else if (pin !== confirmpin) {
+            alert("pin doesn;t match")
+        } else {
+            alert("register successfull")
+
+
+            document.getElementById("form1").style.display = "none";
+
+
+            loginform();
+
+
+
+
+        }
+
+        // let formdata={
+        //     firstname:firstname,
+        //     lastname:lastname,
+        //     dob:dob,
+        //     mobile:mobile,
+        //     pin:pin,
+        //     confirmpin:confirmpin
+        // }
+        // let data1=JSON.stringify(formdata);
+        // sessionStorage.setItem("datas",data1);
+        // let getdata1=sessionStorage.getItem("datas");
+        // console.log(getdata1);
+
+
+        // login form 
+
+        let formdata = {
+            firstname: firstname,
+            lastname: lastname,
+            dob: dob,
+            mobile: mobile,
+            pin: pin,
+            confirmpin: confirmpin
+        }
+        let data1 = JSON.stringify(formdata);
+        sessionStorage.setItem("datas", data1);
+        let getdata1 = sessionStorage.getItem("datas");
+        let getdata2 = JSON.parse(getdata1)
+        console.log(getdata2);
+
+
+
+
+    }
+
+
+
+
+</script>
+<!-- form validation end -->
+
+<!-- add popup login form -->
+
+
+
+<script>
+
+    let getform = document.getElementById("form2");
+    getform.style.display = "none";
+    let reglogbtn = document.querySelectorAll("#button1")
+    reglogbtn.forEach(button1 => {
+        button1.addEventListener("click", (event) => {
+            event.preventDefault();
+            // console.log(event.target.classList.contains("login"));
+            if (event.target.classList.contains("login")) {
+                setTimeout(function () {
+                    getform.style.display = "block";
+                }, 1000)
+
+            } else {
+                getform.style.display = "none";
+            }
+        })
+    })
+</script>
+<!-- popup login end -->
+
+<!-- login validation -->
+
+
+<script>
+    function loginform() {
+
+        let getrebutton1 = document.querySelectorAll("#button2");
+        getrebutton1.forEach(button1 => {
+            button1.addEventListener("click", (event) => {
+                event.preventDefault();
+                if (event.target.classList.contains("login")) {
+                    let mobile = document.querySelector("#mobile").value;
+                    let pin = document.querySelector("#pin").value;
+
+                    let getdata1 = sessionStorage.getItem("datas");
+                    let getdata2 = JSON.parse(getdata1);
+
+                    console.log(getdata2.mobile, getdata2.pin);
+                    if (mobile === "") {
+                        alert("enter mobile number");
+                    } else if (mobile !== getdata2.mobile) {
+                        alert("invalid mobile");
+                    } else if (pin === "") {
+                        alert("enter pin");
+                    } else if (pin !== getdata2.pin) {
+                        alert("enter valid pin");
+                    } else {
+                        alert("login successfull!");
+
+
+                        document.getElementById("form2").style.display = "none";
+                        window.location.href = "./appointment.html";
+
+                        let makeanappointment = document.querySelectorAll("#btn");
+                        makeanappointment.forEach(appointment => {
+                            appointment.addEventListener("click", (event) => {
+                                document.getElementById("form1").style.display = "none";
+
+                            })
+                        })
+
+                    }
+
+                }
+            })
+        })
+    }
+
+</script>
+<!-- login validation end -->
+
+<!-- remove login page -->
+<script>
+    let getlogbtn = document.querySelectorAll("#button2");
+    getlogbtn.forEach(button2 => {
+        button2.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (event.target.classList.contains("close")) {
+                document.getElementById("form2").style.display = "none"
+
+
+
+            }
+        })
+    })
+</script>
+<!-- removing login page end -->
+
+
+<!-- doctor details stored to session storage -->
+
+<script>
+    // function storedata(event){
+    //     let row=event.target.closest(".row")
+    //     let getrows=document.querySelectorAll(".row");
+    //    getrows.forEach((row)=>{
+    //     const name=row.querySelector(".name h3").textContent;
+    //     console.log(name);
+
+    //    })
+    // }
+
+
+    let getbtn = document.querySelectorAll("#btn");
+    let fulldata = [];
+    function storedata() {
+        getbtn.forEach((row) => {
+            row.addEventListener("click", (event) => {
+                let row = event.target.closest(".row");
+                let name = row.querySelector(".name h3").textContent;
+                // console.log(name);
+                let description = row.querySelector(".body").childNodes[0].textContent;
+                // console.log(description);
+                let department = row.querySelector(".body").childNodes[3].textContent;
+                // console.log(department);
+                let experience = row.querySelector(".body").childNodes[5].textContent;
+                // console.log(experience);
+                let gender = row.querySelector(".body").childNodes[7].textContent;
+                // console.log(gender);
+                let languages = row.querySelector(".body").childNodes[9].textContent;
+                // console.log(languages);
+
+                const datas = {
+
+                    name: name,
+                    description: description.trim(),
+                    department: department.trim(),
+                    experience: experience.trim(),
+                    gender: gender.trim(),
+                    languages: languages,
+                };
+                fulldata.push(datas);
+
+                localStorage.setItem("doctordatas", JSON.stringify(fulldata));
+                // let getses=sessionStorage.getItem("doctordatas");
+                // let change=JSON.parse(getses);
+                // console.log(change[0].name);
+
+            });
+
+        });
+
+        // console.log(fulldata);
+
+        // sessionStorage.setItem("doctordatas",JSON.stringify(fulldata));
+        // let getdata=sessionStorage.getItem("doctordatas")
+        // let getparse=JSON.parse(getdata);
+        // console.log(getparse);
+
+    }
+    storedata();
+
+</script>
+<!-- store datas to session storage end -->
+
+<!-- <script src="surgery.js"></script> -->
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="doctorlogin.css">
+    <title>DOCTOR LOGIN</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/blue-logo-insurance-family_1057-2815.jpg?size=626&ext=jpg&ga=GA1.1.1102539373.1687667984&semt=ais"
+                    alt=""></div>
+
+            
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <!-- <a href="#">DOCTOR LOGIN</a> -->
+                <a href="patient.html">PRESCRIPTION</a>
+                <a href="#">CONTACT</a>
+            </nav>
+   
+
+   
+    </header>
+    <div class="content" id="main">
+        <!-- <div id="name" class="name"></div>
+        <div id="mobile" class="mobile"></div>
+        <div id="date" class="date"></div>
+        <div id="time" class="time"></div> -->
+    </div>
+    </div>
+    <script>
+
+        let main=document.querySelector("#main");
+
+
+
+        let getdatas=localStorage.getItem("datas");
+        let changedata=JSON.parse(getdatas);
+
+       for( let i=0;i<=changedata.length-1;i++){
+        console.log(changedata[i]);
+
+        const name=changedata[i].name.trim();
+        const mobile=changedata[i].mobile.trim();
+        const date=changedata[i].date.trim();
+        const time=changedata[i].time.trim();
+        const place=changedata[i].place.trim();
+
+        // get datas using id 
+
+        // let getname=document.querySelector("#name");
+        // let getmobile=document.querySelector("#mobile");
+        // let getdate=document.querySelector("#date");
+        // let gettime=document.querySelector("#time");
+
+        // getname.textContent=name;
+        // getmobile.textContent=mobile;
+        // getdate.textContent=date;
+        // gettime.textContent=time;
+
+
+        // crerating new datas
+
+        let newdiv=document.createElement("div");
+        newdiv.id="newdiv";
+        newdiv.className="newclass";
+
+        let cname=document.createElement("div");
+        cname.className="name f1";
+        cname.id="name";
+        cname.textContent=`NAME:${name}`;
+
+        let cmobile=document.createElement("div");
+        cmobile.className="mobile f1";
+        cmobile.id="mobile";
+        cmobile.textContent=`MOBILE:${mobile}`;
+
+        let cdate=document.createElement("div");
+        cdate.className="date f1";
+        cdate.id="date";
+        cdate.textContent=`DATE:${date}`;
+
+        let ctime=document.createElement("div");
+        ctime.className="time f1";
+        ctime.id="time";
+        ctime.textContent=`TIME:${time}`;
+
+        let cplace=document.createElement("div");
+        cplace.className="place f1";
+        cplace.id="place";
+        cplace.textContent=`PLACE:${place}`.toUpperCase();
+
+        let btndiv=document.createElement('div');
+        btndiv.className="btndiv";
+
+        let removebtn=document.createElement("button");
+        removebtn.className="btn btn-danger b1 remove";
+        removebtn.id="remove";
+        removebtn.textContent="REMOVE";
+
+        let prescriptbtn=document.createElement("button");
+        prescriptbtn.className="btn btn-info b1 prescript";
+        prescriptbtn.id="prescript";
+        prescriptbtn.textContent="PRESCRIPTION";
+
+        btndiv.append(removebtn);
+        btndiv.append(prescriptbtn);
+
+
+        newdiv.append(cname);
+        newdiv.append(cmobile);
+        newdiv.append(cdate);
+        newdiv.append(ctime);
+        newdiv.append(cplace);
+        newdiv.append(btndiv);
+
+         main.appendChild(newdiv);
+
+         console.log(main);
+          
+          
+       }
+
+
+    </script>
+
+    <!-- remove content -->
+    <script>
+        let getremove=document.querySelectorAll("#remove");
+        getremove.forEach((remove)=>{
+            remove.addEventListener("click",(event)=>{
+                // console.log(event.target.parentNode.parentNode);
+                let rem=event.target.parentNode.parentNode;
+                localStorage.removeItem("datas");
+                rem.remove();
+
+                
+               
+            })
+        })
+        
+        
+    </script>
+
+    <!-- remove from localstorage -->
+
+    <script>
+        let getremove1=document.querySelector("#remove");
+        getremove1.forEach(remove=>{
+            remove.addEventListener("click",(event)=>{
+                alert("clicked");
+                let getdiv=document.querySelector("#newdiv");
+                
+            })
+        })
+    </script>
+
+    <!-- redirect to prescription page -->
+
+    <script>
+        let getprescriptbtn=document.querySelectorAll("#prescript");
+        getprescriptbtn.forEach((prescript)=>{
+            prescript.addEventListener("click",(event)=>{
+                window.location.href="./prescription.html"
+
+            })
+        })
+
+    </script>
+<script>
+    let getnewdiv=document.querySelectorAll("#newdiv");
+    let getbtndiv=document.querySelectorAll(".btndiv");
+    getbtndiv.forEach(button=>{
+        button.addEventListener("click",(event)=>{
+            if(event.target.classList.contains("b1")){
+                // console.log(event.target.parentNode.parentNode);
+                let rem1=event.target.parentNode.parentNode;
+                console.log(rem1);
+                localStorage.removeItem(rem1);
+            }
+           
+        })
+    })
+</script>
+    
+</body>
+</html>

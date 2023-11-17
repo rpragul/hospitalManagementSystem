@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>INDEX</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/green-eco-logo-icon_126523-706.jpg?w=740&t=st=1691221739~exp=1691222339~hmac=f81b932f38907dab37d254642e9bf7f6061bc5b4246b80f34094511cf5e1c877"
+                    alt=""></div>
+
+            
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="#" id="dl">DOCTOR LOGIN</a>
+                <a href="patient.html">PRESCRIPTION</a>
+                <a href="#">CONTACT</a>
+            </nav>
+   
+
+   
+    </header>
+
+    <div class="content">
+        <div class="main">
+            PROVIDE AN EXCEPTIONAL PATIENT EXPERIENCE
+        </div>
+        <div class="text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, quo incidunt tempora consectetur
+            animi blanditiis maxime nesciunt? Eos natus eius repudiandae sunt odit doloribus sed enim! Minima eaque
+            sed suscipit!
+        </div>
+        <div class="button">
+            <button class=" btn btn1">READ MORE</button>
+        </div>
+    </div>
+    <div id="form1" class="form1">
+        <div class="name f1">
+            <label for="">NAME:</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="password f1">
+            <label for="">PASSWORD</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="button1 f1">
+            <button id="button1" class="btn btn-primary">LOGIN</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        let getdl=document.querySelector("#dl");
+        let getdlbtn=document.querySelector("#button1");
+       let getform1=document.querySelector("#form1");
+       console.log(getform1);
+       getform1.style.display="none"
+       getdl.addEventListener("click",(event)=>{
+        getform1.style.display="block"
+
+
+        // getdl.addEventListener("click",(event)=>{
+        //     getform1.style.display="none";
+        //     return getdl;
+        // })
+       
+        getdlbtn.addEventListener("click",(event)=>{
+            window.location.href="./doctorlogin.html"
+        })
+       })
+       
+
+    </script>
+
+</body>
+
+</html>

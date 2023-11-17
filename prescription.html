@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="prescription.css">
+    <title>PRESCRIPTION</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/blue-logo-insurance-family_1057-2815.jpg?size=626&ext=jpg&ga=GA1.1.1102539373.1687667984&semt=ais"
+                    alt=""></div>
+
+
+
+            <nav class="navbar" id="navbar">
+                <a class="anchor" href="index.html">HOME</a>
+                <a class="anchor" href="about.html">ABOUT</a>
+                <a class="anchor" href="services.html">SERVICES</a>
+                <a class="anchor" href="#">GALLERY</a>
+                <a class="anchor" href="#">CONTACT</a>
+            </nav>
+
+
+        </header>
+        <!-- tablet details -->
+        <div class="tablet">
+            <div class="row row1">
+                <div class="col col-3">
+                    <label id="label1" for="name">TABLET NAME:</label>
+                    <input type="text" id="name" class="form-control" oninput="getvalue()">
+                    <select name="select" id="selectdropdown"></select>
+                    </select>
+                </div>
+                <div class="col offset-1">
+                    <label id="label1" for="count">TABLET COUNT:</label> 
+                    <input id="count" type="number" class="form-control" min="0">
+                </div>
+                <div class="col offset-1">
+                    <label id="label1" for="morning">MORNING:</label>
+                    <input id="morning" type="checkbox" class="form-check-input" >
+                </div>
+                <div class="col  ">
+                    <label id="label1" for="afternoon">AFTERNOON:</label>
+                    <input id="afternoon" type="checkbox" class="form-check-input" >
+                </div>
+                <div class="col ">
+                    <label id="label1" for="night">NIGHT:</label>
+                    <input id="night" type="checkbox" class="form-check-input" >
+                </div>
+                <div class="col ">
+                    <button id="ok" class="btn btn-success">OK</button>
+                </div>
+            </div>
+        </div>
+        <!-- table details end -->
+        <br>
+        <!-- main content -->
+        <div id="main" class="main">
+            <!-- addding details -->
+            <div class="content">
+                <div id="contenthead" class="head">
+                    <div id="getname" class="getname align"></div>
+                    <div id="description" class="description align"></div>
+                    <div id="department" class="department align"></div>
+                    <button id="getbtnstore" class="btn btn-primary">get</button>
+
+                </div>
+
+            </div>
+            <!-- end of details -->
+
+            <!-- title  -->
+            <div class=" row row2">
+                <div class="col col2">
+                    <h3>TABLET NAME</h3>
+                </div>
+                <div class="col col2">
+                    <h3>TABLET COUNT</h3>
+                </div>
+                <div class="col col2">
+                    <h3>MORNING</h3>
+                </div>
+                <div class="col col2">
+                    <h3>AFTERNOON</h3>
+                </div>
+                <div class="col col2">
+                    <h3>NIGHT</h3>
+                </div>
+            </div>
+            <!-- title end -->
+
+            <!-- adding datas -->
+            <div id="datas" class="datas">
+
+            </div>
+            <!-- adding dats end -->
+        </div>
+        <!-- main content end -->
+
+        <!-- <div id="addbtn" class="addbtn">
+            <button id="add" class="btn btn-success add">ADD</button>
+        </div> -->
+    </div>
+
+
+    <script>
+
+        let getcount = document.querySelector("#count");
+        //    console.log(getcount);
+        let getbtn = document.querySelector("#ok")
+        // console.log(getbtn);
+
+        // let createdarray=["a","ab","bc","bca","gda"];
+
+        // let getarrayvalue=createdarray.filter(value=>value.startsWith("a"));
+        // console.log(getarrayvalue);
+
+        // let alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        // alphabet.forEach((letter)=>{
+        //     if(letter==="a"){
+
+        //     }
+        // })
+        function getvalue() {
+
+            let getname = document.querySelector("#name").value.toUpperCase();
+            console.log(getname);
+
+            // let alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+            let words = ["A-Methapred", "Abciximab", "Abacavir Sulfate ", "Abecma", "Abreva", "Clarithromycin", "Clindamycin", "Penicillin V", "Mebendazole ", "Diazepam", "Gabapentin", "Lorazepam", "Sulfasalazine", "Fentanyl inj ", "Febuxostat ", "Tramadol", "Lornoxicam t", "Midazolam", "Nalidixic acid", "Nitrofurantoin", "Fusidic acid cream", "INH Tablet", "Streptomycin Injection:1gm", "Fluconazole ", "Bevacizumab inj", "Human Insulin NPH", "Terlipressin in", "Betamethasone inj", "Betamethasone", "L thyroxinetab", "Hydrocortisone", "Ormeloxifene HCl", "Erythropoetin Recombinant inj ", "Cholecalcifero", "Triamcinolone acetonide nasal spray ", "Triamcinolone acetonide buccal paste ", "Iron syr", "Ferrous sulphate", "Sodium feredetate", "Iron dextrose", "Zinc sulphate syrup ", "K binding agent", "oral rinse", "Oxygen inhalation", "flunarizine", "esmolol inj", "Wysolone", "Mycophenolate mofetil", "Pamidronate inj IV", "Thyroxin", "Vinblastine", "L-Asparaginase"];
+            let storearray = [];
+            words.forEach((word) => {
+                if (word.charAt(0) == getname) {
+                    storearray.push(word);
+                    // let select = document.createElement("select");
+                    // console.log(select);
+                    let selectdropdown = document.querySelector("#selectdropdown");
+                    storearray.forEach((tablet) => {
+
+
+
+                        let option = document.createElement("option");
+                        option.textContent = tablet;
+
+                        // console.log(option);
+                        selectdropdown.append(option);
+                        // console.log(selectdropdown.innerHTML);
+
+                        let getok = document.querySelector("#ok");
+                        getok.addEventListener("click", (event) => {
+
+                            selectdropdown.remove(selectdropdown.innerHTML);
+
+
+                        })
+
+
+
+
+
+
+
+
+                    })
+
+
+                }
+            })
+        }
+
+
+    </script>
+
+    <!-- create content and store  -->
+
+    <script>
+        let getbtn1 = document.querySelector("#ok");
+        getbtn1.addEventListener("click", (event) => {
+            let getdatas1 = document.querySelector("#selectdropdown").value.toUpperCase().trim();
+            let getcount1 = document.querySelector("#count").value;
+            let getmorningcheck = document.querySelector("#morning").checked;
+            let getafternooncheck = document.querySelector("#afternoon").checked;
+            let getnightcheck = document.querySelector("#night").checked;
+
+            let storedata = document.querySelector("#datas");
+
+            let row = document.createElement("div");
+            row.className = "row createrow";
+            row.id = "rowdata";
+
+            let col1 = document.createElement("div");
+            col1.className = "col create";
+            col1.id = "name1";
+            col1.textContent = `${getdatas1}`;
+
+            let col2 = document.createElement("div");
+            col2.className = "col create"
+            col2.id = "count1";
+            col2.textContent = `${getcount1}`;
+
+
+
+
+
+            let input1 = document.createElement("input");
+            // input1.textContent = "getmorningcheck";
+            input1.className = "form-check-input fc";
+            input1.type = "checkbox";
+            input1.checked=getmorningcheck;
+            input1.id = "morning1";
+            input1.name = "morning"
+            let col3 = document.createElement("div");
+            col3.className = "col check";
+            col3.append(input1);
+
+
+
+            let input2 = document.createElement("input");
+            // input2.textContent = "getafternooncheck";
+            input2.className = "form-check-input fc";
+            input2.type = "checkbox";
+            input2.checked=getafternooncheck;
+            input2.id = "afternoon1";
+            input2.name = "afternoon";
+            let col4 = document.createElement("div");
+            col4.className = "col check";
+            col4.append(input2);
+
+
+
+            let input3 = document.createElement("input");
+            // input3.textContent = "getnightcheck";
+            input3.className = "form-check-input fc";
+            input3.type = "checkbox";
+            input3.checked=getnightcheck;
+            input3.id = "night1"
+            input3.name = "night"
+            let col5 = document.createElement("div");
+            col5.className = "col check";
+            col5.append(input3);
+
+            // let button=document.createElement("div");
+            // button.id="buttonstore";
+
+            // let storebtn=document.createElement("button");
+            // storebtn.id="storebtn";
+            // storebtn.className="btn btn-success"
+            // storebtn.textContent="ADD"
+            // button.append(storebtn);
+
+            row.append(col1);
+            row.append(col2);
+            row.append(col3);
+            row.append(col4);
+            row.append(col5);
+            // row.append(button);
+
+            storedata.appendChild(row);
+
+            // console.log(storedata);
+
+
+        })
+
+
+
+    </script>
+
+    <script>
+        let getstorebtn = document.querySelector("#getbtnstore");
+
+        let getstorename = document.querySelector("#getname");
+        let getstoredescription = document.querySelector("#description");
+        let getstoredepartment = document.querySelector("#department")
+
+        getstorebtn.addEventListener("click", (event) => {
+            let getfromsession = localStorage.getItem("doctordatas");
+            let changedata = JSON.parse(getfromsession);
+            console.log(changedata[0].name);
+
+            getstorename.textContent = `NAME:${changedata[0].name}`.toUpperCase();
+            getstoredescription.textContent = `DESCRIPTION:${changedata[0].description}`;
+            getstoredepartment.textContent = `${changedata[0].department}`.toUpperCase();
+
+            getstorebtn.style.display = "none";
+        })
+
+    </script>
+
+    <!-- store main to session storage -->
+
+
+    <script>
+        let getokbtn = document.querySelector("#ok");
+        let getname = document.querySelector("#selectdropdown");
+            console.log(getname);
+            let getcount1 = document.querySelector("#count");
+            console.log(getcount1);
+            let getmorning = document.querySelector(`input[type="checkbox"]`);
+            console.log(getmorning);
+            let getafternoon = document.querySelector(`input[type="checkbox"]`);
+            console.log(getafternoon);
+            let getnight = document.querySelector(`input[type="checkbox"]`);
+            console.log(getnight);
+        const tabletdatas=[];
+        getokbtn.addEventListener("click", (event) => {
+            let getrowdata = document.querySelector("#rowdata");
+
+           
+           
+            let name=getname.value;
+            let count=getcount1.value;
+            let morning=getmorning.checked;
+            let afternoon=getafternoon.checked;
+            let night=getnight.checked;
+
+            let tabletdetails={
+                name:name,
+                count:count,
+                check1:morning,
+                check2:afternoon,
+                check3:night,
+               
+            }
+            tabletdatas.push(tabletdetails);
+            console.log(tabletdatas);
+
+            localStorage.setItem("tabletdetails",JSON.stringify(tabletdatas))
+
+        })
+
+       
+
+    </script>
+
+</body>
+
+</html>

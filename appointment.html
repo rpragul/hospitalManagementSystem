@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="appointment.css">
+    <title>APPOINTMENTS</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/blue-logo-insurance-family_1057-2815.jpg?size=626&ext=jpg&ga=GA1.1.1102539373.1687667984&semt=ais"
+                    alt=""></div>
+
+
+
+            <nav class="navbar" id="navbar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="services.html">SERVICES</a>
+                <a href="patient.html">PRESCRIPTION</a>
+                <a href="#">CONTACT</a>
+            </nav>
+
+           
+        </header>
+        <div class="counter">
+            <div class="text">PATIENT COUNT:<span id="count" class="count" min="0">0</span></div>
+            
+        </div>
+
+        <div id="content" class="content">
+            <form id="form1" action="" class="input">
+                <div id="fd1" class="name">
+                    <label id="label" for="">NAME:</label>
+                    <input id="input1" type="text" class="form-control" required>
+                </div>
+                <div id="fd1" class="mobile">
+                    <label id="label" for="">MOBILE:</label>
+                    <input id="input2" type="number" class="form-control" required>
+                </div>
+                <div id="fd1" class="date">
+                    <label id="label" for="">DATE:</label>
+                    <input id="input3" type="date" class="form-control" required>
+                </div>
+                <div id="fd1" class="timing">
+                    <label id="label" for="">TIMING:</label>
+                    <input id="input4" type="time" class="form-control" required>
+
+                </div>
+                <div id="fd1" class="place">
+                    <label id="label" for="">PLACE:</label>
+                    <input id="input5" type="text" class="form-control" required>
+
+                </div>
+                <div id="fd1" class="button">
+                    <button id="formbtn" class="btn btn-primary bookbtn">BOOK</button>
+                </div>
+            </form>
+        </div>
+        <div id="bodycontent" class="body">
+
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+    <script>
+        let getform = document.querySelector("#form1");
+        console.log(getform);
+        let name = document.querySelector("#input1");
+        let mobile = document.querySelector("#input2");
+        let date = document.querySelector("#input3");
+        let time = document.querySelector("#input4");
+        let place=document.querySelector("#input5");
+
+
+        let getbutton = document.querySelector("#formbtn");
+        
+        let data1=[];
+
+        getbutton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+           
+            let bookslot = document.querySelector("#bodycontent");
+
+            let newdiv = document.createElement("div");
+            newdiv.className = "datas";
+            newdiv.id = "data";
+
+            let div1 = document.createElement("div");
+            div1.className = "name c1";
+            div1.id = "name";
+            div1.textContent = `NAME:${name.value}`;
+
+            let div2 = document.createElement("div");
+            div2.className = "mobile c1";
+            div2.id = "mobile";
+            div2.textContent = `MOBILE:${mobile.value}`;
+
+            let div3 = document.createElement("div");
+            div3.className = "date c1";
+            div3.id = "date";
+            div3.textContent = `DATE:${date.value}`;
+
+            let div4 = document.createElement("div");
+            div4.className = "time c1";
+            div4.id = "time";
+            div4.textContent = `TIME:${time.value}`;
+
+            let div5=document.createElement("div");
+            div5.className="place c1";
+            div5.id="place";
+            div5.textContent=`PLACE:${place.value}`.toUpperCase();
+
+            let button1=document.createElement("button");
+            button1.className="button1 btn btn-danger remove ";
+            button1.id="button1";
+            button1.textContent="REMOVE"
+
+            let button2=document.createElement("button");
+            button2.className="button2 btn btn-info prescript";
+            button2.id="button2"
+            button2.textContent="PRESCRIPTION"
+
+
+            newdiv.append(div1);
+            newdiv.append(div2);
+            newdiv.append(div3);
+            newdiv.append(div4);
+            newdiv.append(div5);
+            newdiv.append(button1);
+            newdiv.append(button2)
+            // newdiv.append(div3);
+            bookslot.appendChild(newdiv);
+
+            console.log(bookslot);
+
+
+
+            
+            let getbtnremove=document.querySelectorAll("#button1");
+            
+            getbtnremove.forEach(button1=>{
+             button1.addEventListener("click",(event)=>{
+                 let rem=event.target.parentNode;
+                 rem.remove();
+                
+ 
+             })
+            })
+
+            let getbutton2=document.querySelectorAll("#button2")
+        getbutton2.forEach(button2=>{
+            button2.addEventListener("click",(event)=>{
+                window.location.href="./patientprescription.html"
+            })
+            console.log(button2);
+        })
+
+        let storedatas={
+            name:name.value,
+            mobile:mobile.value,
+            date:date.value,
+            time:time.value,
+            place:place.value,
+        }
+         data1.push(storedatas);
+        //  console.log(data1);
+         
+
+        //  store data to session 
+
+        localStorage.setItem("datas",JSON.stringify(data1));
+        // let getdata=sessionStorage.getItem("datas");
+        // let getdata1=JSON.parse(getdata);
+        // console.log(getdata1);
+        // setTimeout(function(){
+        //     localStorage.removeItem("datas")
+        // },50000)
+
+        alert("appointment booked")
+        })
+
+     
+    </script>
+
+    <!-- counter -->
+    <script>
+    
+// add count
+
+let getcount=document.querySelector("#count");
+     let count=0;
+     let getformbtn=document.querySelector("#formbtn");
+    
+     getformbtn.addEventListener("click",(event)=>{
+        if(count<=10){
+            count++;
+            
+            getcount.innerHTML=count;
+        }else{
+          
+        }
+           
+        
+     })
+    //  add count end
+
+    //  store the booked datas to the session storage
+    </script>
+   
+<!--     -->
+</body>
+
+</html>

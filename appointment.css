@@ -1,0 +1,144 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+body{
+    height: 100%;
+    height: auto;
+    background: url(https://th.bing.com/th/id/R.f6be5fef4bdc5618a213de17039be645?rik=brEK5gnLmuIvWg&riu=http%3a%2f%2felixiraid.com%2fwp-content%2fuploads%2f2016%2f09%2fOnline-Hospital-Management-System.png&ehk=qPYVjVw2n1rAkqYGhwUBONCGUfnX81HK5u0zG5HKJzk%3d&risl=&pid=ImgRaw&r=0);
+    background-repeat: none;
+    background-size: cover;
+    position: sticky;
+    
+}
+/* header css */
+header{
+    display:inline-flex;
+    width: 90%;
+    justify-content: space-between;
+    
+    margin: 20px;
+    /* background-color: aqua; */
+    text-align: center;
+}
+.logo>img{
+    height: 2cm;
+    width: 3cm;
+}
+
+/* .btn{
+    font-weight: bold;
+    font-size: 0.5cm;
+} */
+header>nav{
+    text-align: center;
+}
+a{
+    padding: 20px;
+   justify-content: space-between;
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-size: 0.7cm;
+}
+
+/* header end */
+.counter{
+    height: 2cm;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+   /* color: white; */
+   align-items: center;
+}
+.text{
+    margin-left: 17cm;
+    font-size: 0.7cm;
+    font-weight: bold;
+}
+.bookbtn{
+    font-weight: bold;
+}
+
+.content{
+    
+    height: cm;
+    width: 50%;
+    margin: auto;
+    margin-top: 2cm;
+}
+#form1{
+    margin: 0px;
+    /* background-color: aqua; */
+    /* border: solid black; */
+    transition: 0.3s;
+  
+ 
+}
+#form1:hover{
+    transform: translateZ(50px, -50px);
+    box-shadow: 20px 20px 40px 50px #060a0a;
+}
+.input{
+    margin-top: 2cm;
+    padding: 30px;
+}
+.input > input{
+    padding: 20px;
+    margin: 20px;
+}
+#fd1{
+    margin-top: 1cm;
+    /* background-color: aquamarine; */
+    padding: 20px;
+    
+}
+.body{
+    /* background-color: azure; */
+    width: 100%;
+    height: auto;
+    margin-top: 7cm;
+}
+.datas{
+    /* border: 5px solid black; */
+    margin: 20px;
+    text-align: center;
+    font-size: 0.5cm;
+    transition: 0.1s;
+}
+.datas:hover{
+   
+    /* background-color: rgb(168, 214, 223); */
+    box-shadow: 10px 10px 40px 50px #222424;
+    transform: translateZ(50px, -50px);
+}
+.button1{
+    font-weight: bold;
+    margin: 0.5cm 0cm 0.5cm 0cm;
+}
+.button2{
+    font-weight:bold ;
+    margin: 0cm 1cm 0cm 1cm;
+}
+.bookbtn{
+    margin-left: 6cm;
+    
+}
+#label{
+    font-weight: bold;
+   color: white;
+    font-size: 0.7cm;
+}
+.c1{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5cm;
+    color: rgb(5, 5, 5);
+    font-size: 0.7cm;
+}
+.timer{
+    background-color: aqua;
+}

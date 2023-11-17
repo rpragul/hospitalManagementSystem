@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <title>MAP</title>
+</head>
+<body>
+     <div class="container">
+        <h1>stopwatch</h1>
+        <div id="time1" class="time1"></div>
+        <button id="btn1" class="btn1">get</button>
+    </div> 
+
+<!-- count date and time -->
+    <div class="container">
+      <label for="date" id="da">enter given date:</label>
+      <input type="date" id="date">
+      <br>
+      <br>
+      <br>
+      <label for="time" class="ti">enter given time:</label>
+      <input type="time" id="time">
+        <br>
+        <br>
+        <br>
+        <button id="btn2" class="btn2">get</button>
+  
+  
+       
+  </div>
+<!-- timer -->
+  <script>
+  
+  </script>
+
+
+
+
+<br><br><br>
+
+
+
+
+<script>
+  // function gettime(){
+  //     let giventime=document.getElementById("time").value;
+  //     let givendate=document.getElementById("date").value;
+  //     console.log(giventime,givendate);
+  //     let givendati=new Date(`${givendate}T${giventime}`);
+  //     console.log(givendati);
+  //     let date1=new Date().getTime();
+  //     console.log(date1);
+
+  //     let finddate=date1 - givendati;
+  //     let c1=finddate/3600000;
+  //     console.log(c1);
+  //     let convert=(date1+c1)/3600000;
+  //     console.log(convert);
+  //     let converteddate=new Date(date1-c1*3600000);
+  //     console.log(converteddate);
+
+
+
+
+
+
+  //     if(stopwatch.innerHTML==converteddate){
+  //       alert("reschedule");
+  //     }
+  // }
+  
+  let sec1 = 0;
+let min1 = 0;
+let millisecond1 = 0;
+let hour1=0;
+const stopwatch = document.getElementById("time1");
+function stopwatchStart() {
+    sec1 = parseInt(sec1);
+    min1 = parseInt(min1);
+    hour1=parseInt(hour1);
+    millisecond1 = parseInt(millisecond1);
+
+    millisecond1 = millisecond1 + 1;
+
+    if (millisecond1 == 100) {
+      sec1 ++;
+      millisecond1 = 0;
+    }
+
+    stopwatch.innerHTML = hour1+'.'+min1+'.'+sec1 + '.' + millisecond1;
+
+    if (sec1 === 60) {
+      min1 ++;
+      sec1 = 0;
+      // how do i make it run on MM:SS:MS format
+    }
+    if(min1 == 60){
+        hour1++;
+        min1=0;
+    }if( hour1 == 1){
+        
+        return 0;
+    };
+
+    setTimeout("stopwatchStart()", 1);
+
+    stopwatch.innerHTML=new Date();
+
+
+
+    // set the schedule
+    let giventime=document.getElementById("time").value;
+      let givendate=document.getElementById("date").value;
+      console.log(giventime,givendate);
+      let givendati=new Date(`${givendate}T${giventime}`);
+      console.log(givendati);
+      let date1=new Date().getTime();
+      console.log(date1);
+
+      let finddate=date1 - givendati;
+      let c1=finddate/3600000;
+      console.log(c1);
+      let convert=(date1+c1)/3600000;
+      console.log(convert);
+      let converteddate=new Date(date1-c1*3600000);
+      console.log(converteddate);
+
+
+
+
+
+
+      if(new Date(stopwatch.innerHTML).getTime()==converteddate.getTime()){
+        prompt("enter date ")=document.getElementById("time").value;
+        alert("ggdfgeuifedf")
+      }
+
+    
+}
+
+let getbtn1=document.getElementById("btn1");
+getbtn1.addEventListener("click",stopwatchStart)
+
+
+
+  // let getbtn2=document.getElementById("btn2");
+  // getbtn2.addEventListener("click",gettime)
+</script>
+</body>
+</html>

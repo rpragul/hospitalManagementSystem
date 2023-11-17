@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="patientprescription.css">
+    <title>PATIENT PRESCRIPTION</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><img
+                    src="https://img.freepik.com/free-vector/blue-logo-insurance-family_1057-2815.jpg?size=626&ext=jpg&ga=GA1.1.1102539373.1687667984&semt=ais"
+                    alt=""></div>
+
+
+
+            <nav class="navbar" id="navbar">
+                <a class="anchor" href="index.html">HOME</a>
+                <a class="anchor" href="about.html">ABOUT</a>
+                <a class="anchor" href="services.html">SERVICES</a>
+                <a class="anchor" href="#">GALLERY</a>
+                <a class="anchor" href="#">CONTACT</a>
+            </nav>
+
+
+        </header>
+        <div class="main">
+
+            <div id="doctor" class="doctor">
+                <!-- <div class="details">
+                    <div id="name" class="name"></div>
+                    <div id="description" class="description"></div>
+                    <div id="department" class="department"></div>
+    
+                    <button id="btnpersonaldetails" class="btn btn-success">get</button>
+                </div> -->
+            </div>
+            <div class="title">
+                <div class="row row1">
+                    <div class="col">TABLET NAME</div>
+                    <div class="col">TABLET COUNT</div>
+                    <div class="col">MORNING</div>
+                    <div class="col">AFTERNOON</div>
+                    <div class="col">NIGHT</div>
+                </div>
+            </div>
+            <div id="detail" class="details">
+                
+            </div>
+        </div>
+        </div>
+
+    <!-- get doctor personal details  -->
+
+     <script>
+        
+        // let personalbtn = document.querySelector("#btnpersonaldetails");
+
+        // let getname = document.querySelector("#name");
+
+        // let getdescription = document.querySelector("#description");
+
+        // let getdepartment = document.querySelector("#department");
+
+        // personalbtn.addEventListener("click", (event) => {
+        //     let getdata = localStorage.getItem("doctordatas")
+        //     let changedata = JSON.parse(getdata)
+        //     console.log(changedata);
+
+        //     let name = changedata[0].name;
+        //     console.log(name);
+        //     let description = changedata[0].description;
+        //     console.log(description);
+        //     let department = changedata[0].department;
+        //     console.log(department);
+
+        //     getname.textContent = `NAME:${name}`;
+        //     getdescription.textContent = `DESCRIPTION:${description}`;
+        //     getdepartment.textContent = `${department}`
+
+
+        //     personalbtn.style.display = "none";
+
+        // }) 
+    </script>
+
+    <!-- dector personal details end -->
+
+    <!-- tablet details -->
+    <script>
+
+
+window.addEventListener("load",loadtabletdetails);
+
+        function loadtabletdetails(){
+            let gettabletdetails = localStorage.getItem("tabletdetails");
+        let changedata=JSON.parse(gettabletdetails);
+      for( let i=0;i<changedata.length;i++){
+        let name=changedata[i].name;
+        // console.log(name);
+        let count=changedata[i].count;
+        // console.log(count);
+        let check1=changedata[i].check1;
+        // console.log(check1);
+        let check2=changedata[i].check2;
+        // console.log(check2);
+        let check3=changedata[i].check3;
+        // console.log(check3);
+
+
+
+        let detail=document.querySelector("#detail");
+
+
+
+      let row=document.createElement("div");
+      row.className="row row2";
+       
+       let div1=document.createElement("div");
+       div1.className="col c1";
+       div1.textContent=`${name}`.toUpperCase();
+
+       let div2=document.createElement("div");
+       div2.className=" col c1 ";
+       div2.textContent=`${count}`;
+
+
+       let div3=document.createElement("div");
+       div3.className="col c1 ";
+       div3.type="checkbox";
+       div3.checked=check1;
+       div3.textContent=`${check1}`;
+       
+       let div4=document.createElement("div");
+       div4.className="col c1 ";
+       div4.type="checkbox";
+       div4.checked=check2;
+       div4.textContent=`${check2}`;
+
+       let div5=document.createElement("div");
+       div5.className="col c1 ";
+       div5.type="checkbox";
+       div5.checked=check3;
+       div5.textContent=`${check3}`;
+
+       row.append(div1);
+       row.append(div2);
+       row.append(div3);
+       row.append(div4);
+       row.append(div5);
+
+      detail.appendChild(row);
+
+      
+           
+
+      }
+        }
+        
+    </script>
+
+    <!-- get doctor details -->
+
+    <script>
+        
+
+        let getdetails1=document.querySelector("#doctor");
+
+
+        window.addEventListener("load",(event)=>{
+
+            let getdetails=localStorage.getItem("doctordatas");
+            let changedata1=JSON.parse(getdetails);
+            console.log(changedata1[0].name);
+
+            
+
+
+            let details=document.createElement("div");
+        details.id="details";
+        details.className="details";
+
+        let name=document.createElement("div");
+        name.id="name";
+        name.className="name";
+        name.textContent=`NAME:${changedata1[0].name}`;
+        console.log(name);
+
+        let description=document.createElement("div");
+        description.id="description";
+        description.className="description";
+        description.textContent=`DESCRIPTION:${changedata1[0].description}`;
+        console.log(description);
+
+        let department=document.createElement('div');
+        department.id="department";
+        department.className="department";
+        department.textContent=`${changedata1[0].department}`;
+        console.log(department);
+
+        details.append(name);
+        details.append(description);
+        details.append(department);
+
+        getdetails1.append(details)
+
+        })
+       
+
+
+    </script>
+</body>
+
+</html>

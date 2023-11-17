@@ -1,0 +1,89 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0;
+    box-sizing: border-box;
+    justify-content: center;
+}
+body{
+    height: 100%;
+    height: auto;
+    background: url(https://images.pexels.com/photos/4021801/pexels-photo-4021801.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-repeat: none;
+    background-size: cover;
+    
+}
+/* header css */
+header{
+    display:inline-flex;
+    width: 90%;
+    justify-content: space-between;
+    
+    margin: 20px;
+    /* background-color: aqua; */
+    text-align: center;
+}
+.logo>img{
+    height: 2cm;
+    width: 3cm;
+}
+header>button{
+    height: 1cm;
+    margin: 20px;
+    font-weight: bold;
+}
+.btn{
+    font-weight: bold;
+    font-size: 0.5cm;
+}
+header>nav{
+    text-align: center;
+}
+a{
+    padding: 20px;
+   justify-content: space-between;
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-size: 0.7cm;
+   
+}
+a:hover{
+    border-bottom: 3px solid #4454e0 ;
+    color:black ;
+    border-radius: 10px;
+    
+}
+
+/* header css end */
+
+/* create style for datas */
+
+.content{
+    /* background-color: antiquewhite; */
+    /* border: 3px solid black; */
+    margin-top: 3cm;
+}
+.content:hover{
+    background-color: aqua;
+    border: 3px solid black;
+}
+.newclass{
+    /* border: 3px solid black; */
+    margin: 20px;
+    text-align: center;
+    /* background-color: aliceblue; */
+}
+.btndiv{
+   padding: 20px;
+   align-items: center;
+}
+.b1{
+    margin: 20px;
+}
+.f1{
+    font-weight: bold;
+    font-size: 0.5cm;
+    margin-top: 0.2cm;
+    
+}
